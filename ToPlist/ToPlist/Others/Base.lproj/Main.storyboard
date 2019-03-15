@@ -11,11 +11,11 @@
                 <application id="hnw-xV-0zn" sceneMemberID="viewController">
                     <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
                         <items>
-                            <menuItem title="JsonToPlist" id="1Xt-HY-uBw">
+                            <menuItem title="ToPlist" id="1Xt-HY-uBw">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="JsonToPlist" systemMenu="apple" id="uQy-DD-JDr">
+                                <menu key="submenu" title="ToPlist" systemMenu="apple" id="uQy-DD-JDr">
                                     <items>
-                                        <menuItem title="About JsonToPlist" id="5kV-Vb-QxS">
+                                        <menuItem title="About ToPlist" id="5kV-Vb-QxS">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
@@ -29,7 +29,7 @@
                                             <menu key="submenu" title="Services" systemMenu="services" id="hz9-B4-Xy5"/>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
-                                        <menuItem title="Hide JsonToPlist" keyEquivalent="h" id="Olw-nP-bQN">
+                                        <menuItem title="Hide ToPlist" keyEquivalent="h" id="Olw-nP-bQN">
                                             <connections>
                                                 <action selector="hide:" target="Ady-hI-5gd" id="PnN-Uc-m68"/>
                                             </connections>
@@ -47,7 +47,7 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
-                                        <menuItem title="Quit JsonToPlist" keyEquivalent="q" id="4sb-4s-VLi">
+                                        <menuItem title="Quit ToPlist" keyEquivalent="q" id="4sb-4s-VLi">
                                             <connections>
                                                 <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
                                             </connections>
@@ -660,7 +660,7 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
                                     <items>
-                                        <menuItem title="JsonToPlist Help" keyEquivalent="?" id="FKE-Sm-Kum">
+                                        <menuItem title="ToPlist Help" keyEquivalent="?" id="FKE-Sm-Kum">
                                             <connections>
                                                 <action selector="showHelp:" target="Ady-hI-5gd" id="y7X-2Q-9no"/>
                                             </connections>
@@ -733,7 +733,7 @@
                                 <rect key="frame" x="20" y="61" width="440" height="479"/>
                                 <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="XhU-cM-boH">
                                     <rect key="frame" x="0.0" y="0.0" width="440" height="479"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" spellingCorrection="YES" smartInsertDelete="YES" id="oNP-dD-hQ6">
                                             <rect key="frame" x="0.0" y="0.0" width="440" height="479"/>
