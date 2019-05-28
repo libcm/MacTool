@@ -17,8 +17,8 @@
         _textField = [[NSTextField alloc] init];
         _textField.textColor = [NSColor blackColor];
         _textField.editable = NO;
-        _textField.stringValue = @"旗舰店坚实的";
-        _textField.font = [NSFont systemFontOfSize:10];
+        _textField.font = [NSFont systemFontOfSize:6.7];
+        _textField.lineBreakMode = NSLineBreakByCharWrapping;
         _textField.alignment = NSTextAlignmentCenter;
     }
     return _textField;
@@ -41,7 +41,7 @@
         self.menuBarImage = [NSImage imageNamed:@"ColorPicker_menubar.png"];
         imageRect = NSMakeRect(0, 3, menuBarImage.size.width, menuBarImage.size.height);
 //        colorRect = NSMakeRect(menuBarImage.size.width + kPadding, 6, 10, 10);
-        self.textField.frame = NSMakeRect(menuBarImage.size.width + kPadding, 3, 60, menuBarImage.size.height);
+        self.textField.frame = NSMakeRect(menuBarImage.size.width + kPadding, 0, 80, dirtyRect.size.height);
     }
     
     if (mouseLocation.x) 
@@ -49,7 +49,9 @@
         [menuBarImage drawInRect:imageRect fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:1.0f];
         
         if (showPreview) {
-            self.textField.stringValue = [ColorPicker stringAtLocation:mouseLocation];
+            NSString *rgb = [ColorPicker rgbStringAtLocation:mouseLocation];
+            NSString *hex = [ColorPicker hexStringAtLocation:mouseLocation];
+            self.textField.stringValue = [NSString stringWithFormat:@"%@\n%@",rgb, hex];
             // 状态栏显示颜色
 //            NSColor *currentColor = [ColorPicker colorAtLocation:mouseLocation];
 //
@@ -87,7 +89,7 @@
 #pragma mark Events
 
 // The icon was clicked, we toggle the window
-
+// 点击状态栏显示全部
 - (void)mouseDown:(NSEvent *)event {
     [self toggleShowWindow];
 }

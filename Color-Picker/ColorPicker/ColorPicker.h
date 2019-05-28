@@ -12,6 +12,7 @@
 
 + (NSImage *)imageForLocation:(NSPoint)mouseLocation;
 + (NSColor *)colorAtLocation:(NSPoint)mouseLocation;
-+ (NSString *)stringAtLocation:(NSPoint)mouseLocation;
++ (NSString *)hexStringAtLocation:(NSPoint)mouseLocation;
++ (NSString *)rgbStringAtLocation:(NSPoint)mouseLocation;
 
 @end

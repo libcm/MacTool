@@ -42,7 +42,7 @@
     return [bitmap colorAtX:0 y:0];
 }
 
-+ (NSString *)stringAtLocation:(NSPoint)mouseLocation {
++ (NSString *)hexStringAtLocation:(NSPoint)mouseLocation {
     NSColor *color = [self colorAtLocation:mouseLocation];
     const CGFloat *components = CGColorGetComponents(color.CGColor);
     
@@ -51,6 +51,15 @@
     CGFloat b = components[2];
     
     return [NSString stringWithFormat:@"#%02lX%02lX%02lX", lroundf(r * 255), lroundf(g * 255), lroundf(b * 255)];
+}
+
++ (NSString *)rgbStringAtLocation:(NSPoint)mouseLocation {
+    NSColor *color = [self colorAtLocation:mouseLocation];
+    const CGFloat *components = CGColorGetComponents(color.CGColor);
+    CGFloat r = components[0];
+    CGFloat g = components[1];
+    CGFloat b = components[2];
+    return [NSString stringWithFormat:@"RGB:(%.f,%.f,%.f)", r * 255, g * 255, b * 255];
 }
 
 @end

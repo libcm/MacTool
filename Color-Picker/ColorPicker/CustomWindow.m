@@ -73,13 +73,13 @@
     NSPoint origin;
 
     // remember positions
-    if (!forceAnchoring && [[NSUserDefaults standardUserDefaults] objectForKey:kUserDefaultsFrameOriginX]) {
-        float x = [[[NSUserDefaults standardUserDefaults] objectForKey:kUserDefaultsFrameOriginX] floatValue];
-        float y = [[[NSUserDefaults standardUserDefaults] objectForKey:kUserDefaultsFrameOriginY] floatValue];
-        
-        origin = NSMakePoint(x, y);
-    } else
-    {
+    // 设置第一次运行不显示PickerView，只显示状态栏
+//    if (!forceAnchoring && [[NSUserDefaults standardUserDefaults] objectForKey:kUserDefaultsFrameOriginX]) {
+//        float x = [[[NSUserDefaults standardUserDefaults] objectForKey:kUserDefaultsFrameOriginX] floatValue];
+//        float y = [[[NSUserDefaults standardUserDefaults] objectForKey:kUserDefaultsFrameOriginY] floatValue];
+//
+//        origin = NSMakePoint(x, y);
+//    } else {
         attachPoint = point;
         
         float windowRightEdge = point.x + ([self frame].size.width / 2);
@@ -91,7 +91,7 @@
         origin = NSZeroPoint;
         origin.x = point.x - ([self frame].size.width / 2);
         origin.y = point.y - [self frame].size.height - 20;
-    }
+//    }
     
     [self setFrameOrigin:origin];
 

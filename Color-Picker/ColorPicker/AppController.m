@@ -62,8 +62,7 @@
     [self updateViews];
     
     // Show window
-    if (timesRun == 1)
-    {
+    if (timesRun == 1) {
 		NSBeginAlertSheet(kAlertTitleStartupItem,
 						  @"No", nil, @"Yes",
 						  nil, self,                   
@@ -71,10 +70,9 @@
 						  nil, nil,                 
 						  kAlertTextStartupItem,
 						  nil);		
-	}	
-	else 
-    {
-		[self toggleShowWindowFromPoint:[statusItemView getAnchorPoint] forceAnchoring:YES];
+	} else {
+//        [self toggleShowWindowFromPoint:[statusItemView getAnchorPoint] forceAnchoring:YES];
+        [self toggleShowWindowFromPoint:NSMakePoint(0, 0) forceAnchoring:YES];
 	}
     
     [self registerHotKey];
@@ -131,7 +129,7 @@
 		[self.loginItems addAppAsLoginItem];
 		[[NSUserDefaults standardUserDefaults] setBool:YES forKey:kUserDefaultsKeyStartAtLogin];
 	}
-	[self toggleShowWindow];
+    [self toggleShowWindow];
 }
 
 #pragma mark HotKeys
