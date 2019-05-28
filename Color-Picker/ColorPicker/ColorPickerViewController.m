@@ -123,6 +123,11 @@
     [appController toggleShowWindow];
 }
 
+// 退出程序
+- (IBAction)exit:(id)sender {
+    [NSApp terminate:self];
+}
+
 - (void)updateShortcutText {
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];

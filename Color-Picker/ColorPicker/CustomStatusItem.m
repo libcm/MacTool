@@ -17,7 +17,7 @@
         _textField = [[NSTextField alloc] init];
         _textField.textColor = [NSColor blackColor];
         _textField.editable = NO;
-        _textField.font = [NSFont systemFontOfSize:6.7];
+        _textField.font = [NSFont boldSystemFontOfSize:6.5];
         _textField.lineBreakMode = NSLineBreakByCharWrapping;
         _textField.alignment = NSTextAlignmentCenter;
     }
@@ -38,14 +38,13 @@
 - (void)drawRect:(NSRect)dirtyRect
 {
     if (!menuBarImage) {
-        self.menuBarImage = [NSImage imageNamed:@"ColorPicker_menubar.png"];
+        self.menuBarImage = [NSImage imageNamed:@"color_picker.png"];
         imageRect = NSMakeRect(0, 3, menuBarImage.size.width, menuBarImage.size.height);
 //        colorRect = NSMakeRect(menuBarImage.size.width + kPadding, 6, 10, 10);
         self.textField.frame = NSMakeRect(menuBarImage.size.width + kPadding, 0, 80, dirtyRect.size.height);
     }
     
-    if (mouseLocation.x) 
-    {
+    if (mouseLocation.x)  {
         [menuBarImage drawInRect:imageRect fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:1.0f];
         
         if (showPreview) {
