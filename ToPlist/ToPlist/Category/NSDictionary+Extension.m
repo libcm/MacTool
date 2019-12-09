@@ -11,7 +11,6 @@
 @implementation NSDictionary (Extension)
 
 - (NSDictionary *)removeNull{
-    
     // 去除空值
     NSMutableDictionary *dic = self.mutableCopy;
     for (NSString * key in dic.allKeys) {

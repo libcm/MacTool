@@ -15,6 +15,7 @@
 @property (weak) IBOutlet DestinationView *customView;
 @property (weak) IBOutlet NSImageView *imageView;
 @property (weak) IBOutlet NSTextField *sizeLabel;
+@property (nonatomic, strong) NSImage *oldImage;
 @end
 
 @implementation ViewController
@@ -66,6 +67,7 @@
 - (void)dragDropViewFileList:(NSArray *)fileList {
     NSString *path = fileList.firstObject;
     NSImage *image = [[NSImage alloc] initWithContentsOfFile:path];
+    self.oldImage = image;
     self.imageView.image = image;
     // 获取图片文件大小
     CGFloat fileSize = [self getImageFileSizeWithPath:path] / 1024.0;
@@ -79,6 +81,10 @@
     CGFloat radius = [self.comboBox.stringValue doubleValue];
     NSImage *image = [self.imageView.image compressWithRate:radius / 100];
     self.imageView.image = image;
+}
+
+- (IBAction)resetAction:(id)sender {
+    self.imageView.image = self.oldImage;
 }
 
 - (IBAction)tipAction:(id)sender {

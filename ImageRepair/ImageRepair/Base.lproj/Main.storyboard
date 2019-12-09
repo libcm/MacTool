@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15505"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -710,21 +710,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="429"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mkv-FH-sMi">
-                                <rect key="frame" x="64" y="13" width="112" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="Rnp-ul-WdG"/>
-                                </constraints>
-                                <buttonCell key="cell" type="push" title="裁剪" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="DjE-VW-zAJ">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="clipAction:" target="XfG-lQ-9wD" id="NQa-fK-iMI"/>
-                                </connections>
-                            </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="MZV-ii-bmc">
-                                <rect key="frame" x="304" y="13" width="112" height="32"/>
+                                <rect key="frame" x="239" y="13" width="112" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="z7w-q0-L8z"/>
                                 </constraints>
@@ -781,7 +768,7 @@
                                 </constraints>
                             </customView>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Hgz-ci-HRF">
-                                <rect key="frame" x="184" y="13" width="112" height="32"/>
+                                <rect key="frame" x="129" y="13" width="112" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="uoZ-l3-w7P"/>
                                 </constraints>
@@ -807,27 +794,54 @@
                                 </connections>
                             </button>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UfJ-9z-CMa">
-                                <rect key="frame" x="18" y="392" width="444" height="17"/>
+                                <rect key="frame" x="18" y="393" width="444" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" id="TQw-hw-wmd">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" red="0.70587366819999997" green="0.70587784050000002" blue="0.70588880779999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="u1y-8i-ekT">
+                                <rect key="frame" x="349" y="13" width="112" height="32"/>
+                                <buttonCell key="cell" type="push" title="重置" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Hgw-wU-T3z">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="resetAction:" target="XfG-lQ-9wD" id="xZH-z1-rgg"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mkv-FH-sMi">
+                                <rect key="frame" x="19" y="13" width="112" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Rnp-ul-WdG"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="裁剪" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="DjE-VW-zAJ">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="clipAction:" target="XfG-lQ-9wD" id="NQa-fK-iMI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="UfJ-9z-CMa" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="1PH-TI-PzU"/>
                             <constraint firstItem="vqe-iw-LoQ" firstAttribute="bottom" secondItem="EtI-Lh-xil" secondAttribute="bottom" id="3iY-ui-SIR"/>
                             <constraint firstItem="4eX-3F-aF8" firstAttribute="bottom" secondItem="Egs-gz-pBe" secondAttribute="bottom" constant="-5" id="5ah-w3-Azm"/>
-                            <constraint firstItem="Hgz-ci-HRF" firstAttribute="leading" secondItem="mkv-FH-sMi" secondAttribute="trailing" constant="20" id="6rV-CZ-ePp"/>
+                            <constraint firstItem="Hgz-ci-HRF" firstAttribute="leading" secondItem="mkv-FH-sMi" secondAttribute="trailing" constant="10" id="6rV-CZ-ePp"/>
                             <constraint firstItem="Hgz-ci-HRF" firstAttribute="top" secondItem="mkv-FH-sMi" secondAttribute="top" id="8Zu-98-M73"/>
                             <constraint firstAttribute="trailing" secondItem="UfJ-9z-CMa" secondAttribute="trailing" constant="20" id="ARM-eP-46n"/>
+                            <constraint firstItem="MZV-ii-bmc" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" constant="55" id="AgK-e0-3sJ"/>
+                            <constraint firstItem="u1y-8i-ekT" firstAttribute="top" secondItem="MZV-ii-bmc" secondAttribute="top" id="FC1-3f-sH8"/>
+                            <constraint firstItem="u1y-8i-ekT" firstAttribute="leading" secondItem="MZV-ii-bmc" secondAttribute="trailing" constant="10" id="H89-fk-eRu"/>
+                            <constraint firstItem="u1y-8i-ekT" firstAttribute="bottom" secondItem="MZV-ii-bmc" secondAttribute="bottom" id="IBg-sd-57X"/>
                             <constraint firstItem="4eX-3F-aF8" firstAttribute="top" secondItem="Egs-gz-pBe" secondAttribute="top" constant="5" id="ImC-KV-JDc"/>
                             <constraint firstItem="EtI-Lh-xil" firstAttribute="top" secondItem="Egs-gz-pBe" secondAttribute="bottom" constant="20" id="Ito-Yo-wFK"/>
                             <constraint firstAttribute="bottom" secondItem="MZV-ii-bmc" secondAttribute="bottom" constant="20" id="JTe-ZC-iy5"/>
-                            <constraint firstItem="Hgz-ci-HRF" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="SgL-fX-eQ3"/>
-                            <constraint firstItem="MZV-ii-bmc" firstAttribute="leading" secondItem="Hgz-ci-HRF" secondAttribute="trailing" constant="20" id="aEC-wf-0ds"/>
+                            <constraint firstItem="Hgz-ci-HRF" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" constant="-55" id="SgL-fX-eQ3"/>
                             <constraint firstItem="vqe-iw-LoQ" firstAttribute="top" secondItem="EtI-Lh-xil" secondAttribute="top" id="amG-Pi-04z"/>
+                            <constraint firstItem="u1y-8i-ekT" firstAttribute="width" secondItem="MZV-ii-bmc" secondAttribute="width" id="ffn-xx-ngS"/>
                             <constraint firstItem="Egs-gz-pBe" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="gar-up-ziz"/>
                             <constraint firstItem="4eX-3F-aF8" firstAttribute="leading" secondItem="Egs-gz-pBe" secondAttribute="leading" constant="5" id="i5J-EC-xmz"/>
                             <constraint firstItem="4eX-3F-aF8" firstAttribute="trailing" secondItem="Egs-gz-pBe" secondAttribute="trailing" constant="-5" id="i9p-6z-olU"/>

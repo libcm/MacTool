@@ -15,6 +15,7 @@
 		0E797E8A223B778B007CF991 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E797E89223B778B007CF991 /* XMLReader.m */; };
 		0ED5D10221B7838000B0812E /* NSDictionary+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ED5D10121B7838000B0812E /* NSDictionary+Extension.m */; };
 		0ED5D10521B783D500B0812E /* NSArray+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ED5D10421B783D500B0812E /* NSArray+Extension.m */; };
+		EA07982322BB28160090A328 /* TextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA07982222BB28160090A328 /* TextFieldCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,8 @@
 		0ED5D10121B7838000B0812E /* NSDictionary+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Extension.m"; sourceTree = "<group>"; };
 		0ED5D10321B783D500B0812E /* NSArray+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+Extension.h"; sourceTree = "<group>"; };
 		0ED5D10421B783D500B0812E /* NSArray+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Extension.m"; sourceTree = "<group>"; };
+		EA07982122BB28160090A328 /* TextFieldCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextFieldCell.h; sourceTree = "<group>"; };
+		EA07982222BB28160090A328 /* TextFieldCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextFieldCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +110,8 @@
 				0E55D50821AFB9C30096A8F6 /* AppDelegate.m */,
 				0E55D50A21AFB9C30096A8F6 /* ViewController.h */,
 				0E55D50B21AFB9C30096A8F6 /* ViewController.m */,
+				EA07982122BB28160090A328 /* TextFieldCell.h */,
+				EA07982222BB28160090A328 /* TextFieldCell.m */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -204,6 +209,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA07982322BB28160090A328 /* TextFieldCell.m in Sources */,
 				0E55D50C21AFB9C30096A8F6 /* ViewController.m in Sources */,
 				0ED5D10521B783D500B0812E /* NSArray+Extension.m in Sources */,
 				0E55D51421AFB9C40096A8F6 /* main.m in Sources */,

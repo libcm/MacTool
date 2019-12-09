@@ -12,10 +12,11 @@
 #import "XMLReader.h"
 
 
-@interface ViewController ()
+@interface ViewController ()<NSAnimationDelegate>
 @property (unsafe_unretained) IBOutlet NSTextView *textView;
 @property (nonatomic, strong) NSMutableDictionary *xmlDict;
 @property (nonatomic, strong) NSString *contentStr;
+@property (weak) IBOutlet NSTextField *tipLabel;
 @end
 
 @implementation ViewController
@@ -29,7 +30,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.tipLabel.layer.cornerRadius = 10.f;
+    self.tipLabel.layer.masksToBounds = YES;
 }
 
 - (IBAction)clearAction:(id)sender {
@@ -57,6 +59,7 @@
         return;
     }
     [self save:content];
+    
 }
 
 - (void)save:(id)data {
@@ -81,10 +84,10 @@
                 jsonDict = [jsonDict removeNull];
                 result = [jsonDict writeToFile:[panel URL].path atomically:YES];
             }
-            if (!result) {
-                self.textView.string = @"存储失败";
-            }else {
-                self.textView.string = @"存储成功";
+            if (result) {
+                [self showTipWithMessage:@"存储成功"];
+            } else {
+                [self showTipWithMessage:@"存储失败"];
             }
         }
     }];
@@ -101,6 +104,32 @@
     }else {
         return NO;
     }
+}
+
+- (void)showTipWithMessage:(NSString *)message {
+    self.tipLabel.stringValue = message;
+    NSDictionary *dictionary = [[NSDictionary alloc] initWithObjectsAndKeys: self.view,NSViewAnimationTargetKey,NSViewAnimationFadeInEffect,NSViewAnimationEffectKey, nil];
+    NSViewAnimation *animation = [[NSViewAnimation alloc] initWithViewAnimations:[NSArray arrayWithObject:dictionary]];
+    animation.delegate = self;
+    animation.duration = 2;
+    //NSAnimationBlocking阻塞
+    //NSAnimationNonblocking异步不阻塞
+    //NSAnimationNonblockingThreaded线程不阻塞
+    [animation setAnimationBlockingMode:NSAnimationNonblockingThreaded];
+    [animation startAnimation];
+    
+}
+
+- (BOOL)animationShouldStart:(NSAnimation *)animation {
+    self.tipLabel.hidden = NO;
+    return YES;
+}
+
+- (void)animationDidEnd:(NSAnimation *)animation {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.tipLabel.hidden = YES;
+        self.textView.string = @"";
+    });
 }
 
 @end
